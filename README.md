@@ -1,10 +1,3 @@
-# CS-E4640 Big Data Platforms
+# Assignment Assignment_NR  Your_STUDENTID
 
-This GIT hosts the Assignments for the course Big Data Platforms within Aalto University.
-
-## Content
-- [Assignment 1](Assignment1)
-- [Assignment 2](Assignment2)
-- [Assignment 3](Assignment3)
-
-
+> Guide line: This is the file where you will explain the structure of your assignment delivery. Remember to replace **Assignment_NR** with the number of the assignment (e.g., 1, 2, 3, or 4) and **Your_STUDENTID** with your student number. Remove all guidelines from the template.
