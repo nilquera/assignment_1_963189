@@ -1,0 +1,30 @@
+{
+  "name": "mysimbdp-dataingest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint . --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^4.15.1",
+    "dotenv": "^8.2.0",
+    "path": "^0.12.7",
+    "watch": "^1.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1"
+  }
+}

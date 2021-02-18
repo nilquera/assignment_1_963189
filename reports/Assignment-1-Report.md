@@ -43,11 +43,11 @@ I'll also create the **mysimbdp-dataingest** component in a NodeJS environment. 
 
 Cassandra allows the creation of a cluster of nodes in a peer-to-peer communication style. Each request is routed to one of the nodes, which acts as a coordinator. Besides, Cassandra's primary features concerning availability are partitioning and replication.
 
-To start, I think it is a good idea to use two datacenters to store my data. Each datacenter will have a minimum of two replicated nodes. I'll use the NetworkTopologyStrategy, which places replicas in the same datacenter always in different racks. Thus, I'll create four nodes distributed in two datacenters.
+To start, I think it is a good idea to use two datacenters to store my data. Each datacenter will have a minimum of two replicated nodes.
 
 **4. You decide a pre-defined level of data replication for your tenants/customers. Explain how many nodes are needed in the deployment of mysimbdp-coredms for your choice so that this component can work property (e.g., the system still supports redundancy in the case of a failure of a node)**
 
-I assume that in my scenario, writings will be much more frequent than readings. For this reason, it's not a good idea to have a very high replication. The replication factor (RF) will be of 2, meaning that each row will be stored in two different nodes (in the same datacenter). In total, I'll have four nodes, two in each datacenter. The partition level will be of 2, meaning that rows will be written only in one of the two datacenters.
+I assume that writings will be much more frequent than readings. For this reason, it's not a good idea to have a very high replication (replication improves readings but decreases write speed). The replication factor (RF) will be of 2, meaning that each row will be stored in two different nodes. I'll use the "NetworkTopologyStrategy", which places replicas in the same datacenter in different racks.
 
 **5. Explain how would you scale mysimbdp to allow many tenants using mysimbdp-dataingest to push data into mysimbdp**
 
@@ -57,7 +57,39 @@ I assume that in my scenario, writings will be much more frequent than readings.
 
 **1. Design, implement and explain the data schema/structure for mysimbdp-coredms.**
 
+The fields of the tortoise data are: time, readable_time, acceleration, acceleration_x, acceleration_y, acceleration_z, battery, humidity, pressure, temperature and dev-id.
+
+Since our data is pretty simple, we will have a single table (with its corresponding partitioning and replication) storing each Ruuvitag's values. Besides those values, I'll create an atribute storing the month of the reading. I explain why in question 2. Finally, _dev-id_, _month_ and _time_ will form a compound key. The rest of the parameters will be simple atribute columns.
+
+```
+CREATE TABLE ruuvitag_measures (
+    dev-id text,
+    month text,
+    ts timeuuid,
+    acceleration int,
+    acceleration_x int,
+    acceleration_y int,
+    acceleration_z int,
+    battery int,
+    humidity int,
+    pressure int,
+    temperature int,
+    primary key((dev-id, month), ts)
+) WITH CLUSTERING ORDER BY (ts DESC)
+    AND COMPACTION = {'class': 'TimeWindowCompactionStrategy',
+    'compaction_window_unit': 'DAYS',
+    'compaction_window_size': 1};
+```
+
 **2. Design a strategy for data partitioning/sharding and explain your implementation for data partitioning/sharding together with your design for replication in Part 1, Point 4, in mysimbdp-coredms.**
+
+In Cassandra, data modeling is query-driven, which means that we design our tables for specific queries. I need to worry about this mainly because queries are best designed to access a single table. If a query needs to access several tables, the latency might be too long. The process of denormalization (duplicating data across different tables) will help me with that.
+
+The question is: how will users read data from our database? Most of the time, users will be interested in a single Ruuvitag. So, we want to keep each ruuvitag's data as gathered as possible. I also assume that users will be interested in detecting anomalities in any of the Ruuvitag parameters. The following query will be the most typical for my database:
+
+Q1: Find all historical data for the Ruuvitag with id _dev-id_.
+
+Based on this query, it makes no sense to denormalize data per parameter (e.g. create a table for pressure, another one humidity and so on) to optimize reads. Instead, I will create a single table that will keep all the parameters. As I said before, the _dev-id_ identifying the Ruuvitag, the _month_ and the timestamp (_time_) will form a compound primary key. I'd like to use _dev-id_ as the partition key, but this would result in evergrowing partitions. That's why I created the _month_ field. I'll use _dev-id_ and _month_ as partition key, so all data will be partitioned depending on the device and the month. To order Ruuvitag data by time, the _time_ field will be a clustering column in ascending order.
 
 **3. Write a mysimbdp-dataingest that takes data from your selected sources and stores the data into mysimbdp-coredms. Explain possible consistency options for writing data in your mysimdbp-dataingest.**
 
