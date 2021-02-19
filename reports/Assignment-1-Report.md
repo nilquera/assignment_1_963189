@@ -1,17 +1,6 @@
-# This your assignment report
-
-It is a free form. you can add:
-
-- your designs
-- your answers to questions in the assignment
-- your test results
-- etc.
-
-The best way is to have your report written in the form of point-to-point answering the assignment.
-
 # Assignment 1 report
 
-In this file we look into the details of my solution for the first assignment. I will also answer the questions provided by the course.
+In this file we look into the details of my solution for the first assignment. I will answer the questions provided by the course.
 
 # Design
 
@@ -37,7 +26,7 @@ This first Assignment of the BDP course doesn't require advanced setups. Since I
 
 As per the **mysimbdp-daas** component, I'll create a simple REST API written in CommonJS (Javascript for NodeJS). The REST API allows access to resources in a limited and standard way. Clients can create, request, update or delete database entries. Because this API will provide access to the whole database, I'll set an authentication mechanism. By now, I'll do this with Json Web Token (JWT). I'll use ExpressJS to create the API and Datastax's nodejs-driver for Cassandra to interact with the database.
 
-I'll also create the **mysimbdp-dataingest** component in a NodeJS environment. This component will be run in the client side. The CSV files containing tortoise information will be stored in the same hardware. In this way, the dataingest program will read CSVs as soon as they are created and will move them to a temporary folder. The dataingest will also run Datastax's nodejs-driver to connect to Cassandra and write the files.
+I'll also create the **mysimbdp-dataingest** component in a NodeJS environment. This component will be run in the client side. The CSV files containing tortoise information will be stored in the same filesystem. In this way, the dataingest program will read CSVs as soon as they are created and will move them to a temporary folder. The dataingest will also run Datastax's nodejs-driver to connect to Cassandra and write the files.
 
 **3. Explain a configuration of a cluster of nodes for mysimbdp-coredms so that you do not have a single-point-of-failure problem for mysimbdp-coredms for your tenants**
 
@@ -93,18 +82,74 @@ Based on this query, it makes no sense to denormalize data per parameter (e.g. c
 
 **3. Write a mysimbdp-dataingest that takes data from your selected sources and stores the data into mysimbdp-coredms. Explain possible consistency options for writing data in your mysimdbp-dataingest.**
 
+One of the potential issues would be that clients tried to store values not supported in the table schema. In cases like that, the server rejects the insert. Another option would be the following. Whenever a new CSV file is detected, the program checks if its headers coincide with the required fields in the database. If they don't the client would be allowed to create his own new table under certain restrictions.
+
 **4. Given your deployment environment, show the performance (response time and failure) of the tests for 1,5, 10, .., n of concurrent mysimbdp-dataingest writing data into mysimbdp-coredms with different speeds/velocities. Indicate any performance differences due to the choice of consistency options.**
 
+The cassandra-driver library for NodeJS limits the concurrent transactions by client to 2048. I made the following tests inserting a single file with 15,969 rows. On one hand, I tested with 1, 5, 10 and 25 concurrent mysimbdp-dataingest processes. I combined the previous with different transaction concurrency limits: 10, 100, 1000 and 2048. Thus, the maximum will be 25*2048 = 51200 concurrent inserts.
+
+### 1 process
+
+| concurrency limit | time/process   | rows/s |
+|-------------------|--------|--------|
+| 10                | 37.496 | 426    |
+| 100               | 10.282 | 1553   |
+| 1000              | 7.006  | 2279   |
+| 2048              | 6.835  | 2336   |
+
+### 5 processes
+
+| concurrency limit | time/process   | rows/s |
+|-------------------|--------|----------|
+| 10                | 34.794 |      459    |
+| 100               | 11.983 |     1333     |
+| 1000              | 9.180  |   1740       |
+| 2048              |  10.380 |    1538      |
+
+### 10 processes
+
+| concurrency limit | time/process   | rows/s |
+|-------------------|--------|----------|
+| 10                | 36.624 |    436      |
+| 100               | 15.089 |   1058       |
+| 1000              | 13.669  |  1169        |
+| 2048              | 15.836  |  1008        |
+
+### 25 processes
+
+| concurrency limit | time/process   | rows/s |
+|-------------------|--------|----------|
+| 10                | 41.563 |    384      |
+| 100               | 30.424 |     525     |
+| 1000              |  31.355 |    509      |
+| 2048              |  34.520 |    427      |
+
+Looking at the performance results, it seems that the bootleneck is at the client side. For example, looking at the time per process with 10 concurrent transactions, they are very similar. This suggests that what takes time is the processing of the csv file. Adding more processes doesn't seem to add more load to the clusters.
+
 **5. Observing the performance and failure problems when you push a lot of data into mysimbdp-coredms (you do not need to worry about duplicated data in mysimbdp), propose the change of your deployment to avoid such problems (or explain why you do not have any problem with your deployment).**
+
+As I said, what seems to cause more trouble is the reading of the CSV files. At this moment, all the CSV is written to memory first when it is parsed with csv-parse library. Moreover, the whole memory object is mapped into arrays of arrays as a matter of code design. This could be improved by writting some middle component which directly produced the CSV rows correctly formatted.
 
 # Extension
 
 **1. Using your mysimdbp-coredms, a single tenant can create many different databases/datasets. Assume that you want to support the tenant to manage metadata about the databases/datasets, what would be your solution?**
 
-**2. Assume that each of your tenants/users will need a dedicated mysimbdp-coredms. Design the data schema of service information for mysimbdp-coredms that can be published into an existing registry (like ZooKeeper, consul or etcd) so that you can find information about which mysimbdp-coredms is for which tenants/users.**
+I would first create a table representing databases in mysimbdp-coredms. That table would have a record per database and would have the following fields: number of tables, total number of rows, used capacity of tenant's contract, number of nodes holding the database, datacenters in which the database is located, topology strategy, etc.
 
-**3. Explain how you would change the implementation of mysimbdp-dataingest (in Part 2) to integrate a service discovery feature (no implementation is required).**
+Also, I would create a table to represent other tables more specifically. Each table would have its own row and would keep track of number of rows, number of partitions used, replication state, etc.
+
+<!-- **2. Assume that each of your tenants/users will need a dedicated mysimbdp-coredms. Design the data schema of service information for mysimbdp-coredms that can be published into an existing registry (like ZooKeeper, consul or etcd) so that you can find information about which mysimbdp-coredms is for which tenants/users.**
+ -->
+
+<!-- 
+**3. Explain how you would change the implementation of mysimbdp-dataingest (in Part 2) to integrate a service discovery feature (no implementation is required).** -->
 
 **4. Assume that now only mysimbdp-daas can read and write data into mysimbdp-coredms, how would you change your mysimbdp-dataingest (in Part 2) to work with mysimbdp-daas?**
 
+My idea was to create a simple REST API to manage resources in the database. I would change dataingest to query that API instead. API queries would be made mostly to a single endpoint to insert new rows in the database.
+
 **5. Assume that you design APIs for mysimbdp-daas so that any other developer who wants to implement mysimbdp-dataingest can write his/her own ingestion program to write the data into mysimbdp-coredms by calling mysimbdp-daas. Explain how would you control the data volume and speed in writing and reading operations for a tenant?**
+
+I would use the NodeJS library "express-rate-limit", which allows to limit the number of requests per timeframe and IP.
+
+If I wanted to set user specific limits, I would have to implement some kind of logging mechanism so that all requests are on behalf of a certain user and his rate limit is adjusted.
