@@ -42,6 +42,8 @@ I assume that writings will be much more frequent than readings. For this reason
 
 > In an ideal horizontally scalable system, addition of hardware should provide linear increases in capacity available without reconfiguration or downtime required of existing nodes. Apache Cassandra meets the requirements of an ideal horizontally scalable system by allowing for seamless addition of nodes. As you need more capacity, you add nodes to the cluster and the cluster will utilize the new resources automatically (DataStax, 2010).
 
+Cassandra easily lets you add new nodes to a cluster. The problem is that the token ring could be reconfigured and some data would have to be moved to other nodes. To prevent this harsh situation from anoying tenants, I would try to do this kind of additions during nighttime.
+
 # Implementation
 
 **1. Design, implement and explain the data schema/structure for mysimbdp-coredms.**
@@ -51,19 +53,19 @@ The fields of the tortoise data are: time, readable_time, acceleration, accelera
 Since our data is pretty simple, we will have a single table (with its corresponding partitioning and replication) storing each Ruuvitag's values. Besides those values, I'll create an atribute storing the month of the reading. I explain why in question 2. Finally, _dev-id_, _month_ and _time_ will form a compound key. The rest of the parameters will be simple atribute columns.
 
 ```
-CREATE TABLE ruuvitag_measures (
-    dev-id text,
+CREATE TABLE coredms.metrics (
+    dev_id text,
     month text,
-    ts timeuuid,
-    acceleration int,
-    acceleration_x int,
-    acceleration_y int,
-    acceleration_z int,
-    battery int,
-    humidity int,
-    pressure int,
-    temperature int,
-    primary key((dev-id, month), ts)
+    ts timestamp,
+    acceleration double,
+    acceleration_x double,
+    acceleration_y double,
+    acceleration_z double,
+    battery double,
+    humidity double,
+    pressure double,
+    temperature double,
+    primary key((dev_id, month), ts)
 ) WITH CLUSTERING ORDER BY (ts DESC)
     AND COMPACTION = {'class': 'TimeWindowCompactionStrategy',
     'compaction_window_unit': 'DAYS',

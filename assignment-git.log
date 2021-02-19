@@ -1,2 +1,95 @@
-the content of this file should be the output of the log of your own git project for this assignment
-using git log command to export your git log
+commit dd331edbfb5653b7b9b4362848a7fc7a783f5ceb
+Author: Nil Quera <nlquera97@gmail.com>
+Date:   Fri Feb 19 12:25:04 2021 +0200
+
+    Add cassandra nodes cluster configuration
+
+commit a0fc83c7b26f378c93b90469a882345376519f61
+Author: Nil Quera <nlquera97@gmail.com>
+Date:   Fri Feb 19 05:45:07 2021 +0200
+
+    Add minor changes in readme
+
+commit 1c0cc9d6e58a6791aa85a2eacc9a4a667ea9f3d2
+Author: Nil Quera <nlquera97@gmail.com>
+Date:   Fri Feb 19 05:43:37 2021 +0200
+
+    Add main readme
+
+commit 7fdf9dde9313f63560149cbabe0cb9deb542929b
+Author: Nil Quera <nlquera97@gmail.com>
+Date:   Fri Feb 19 05:35:54 2021 +0200
+
+    Modify dataingest index
+
+commit 9ea0dafcd67e0c0abaa19d91e85ca7b6eb11844d
+Author: Nil Quera <nlquera97@gmail.com>
+Date:   Fri Feb 19 05:35:04 2021 +0200
+
+    Add installation guide
+
+commit 22ebe929d3c49fe6fb2312f6dc2817ecf14fdd06
+Author: Nil Quera <nlquera97@gmail.com>
+Date:   Fri Feb 19 05:34:00 2021 +0200
+
+    Add dotenv template
+
+commit 2ccd604130c5ea6880c9e03d8b968d3c965cd9d5
+Author: Nil Quera <nlquera97@gmail.com>
+Date:   Fri Feb 19 05:10:55 2021 +0200
+
+    Create script to fetch sample data
+
+commit 97ae15c2c3a10f7749714dd02dfb00746f72f492
+Author: Nil Quera <nlquera97@gmail.com>
+Date:   Fri Feb 19 05:00:30 2021 +0200
+
+    Add CQL to initialize database
+
+commit 713174ae811473933978a50710fb1c5c7cffb9b0
+Author: Nil Quera <nlquera97@gmail.com>
+Date:   Fri Feb 19 02:36:16 2021 +0200
+
+    Add inserts to mysimbdp-coredms
+
+commit f7da4604ad851c892b048fc2c2eefba8d793279c
+Author: Nil Quera <nlquera97@gmail.com>
+Date:   Thu Feb 18 19:58:47 2021 +0200
+
+    Add initial dataingest code
+
+commit 969bfc9593a499aa1e8e8feab05488050e2396d4
+Author: Nil Quera <nlquera97@gmail.com>
+Date:   Tue Feb 16 11:56:00 2021 +0200
+
+    Answer design questions
+
+commit 2fa8bb6c9e864779aa12d9272e3cf20f79234b95
+Author: Nil Quera <nlquera97@gmail.com>
+Date:   Fri Feb 12 10:58:34 2021 +0200
+
+    Restructure files
+
+commit 3d4e800505b6000550751477276cd90e26ed71a7
+Author: Nil Quera <nlquera97@gmail.com>
+Date:   Fri Feb 12 10:54:08 2021 +0200
+
+    Add Assignment 1 template files
+
+commit d14d048e9318c86c1ef47bc38ee03726f071c6d2
+Author: Nil Quera <nlquera97@gmail.com>
+Date:   Wed Feb 10 21:03:28 2021 +0200
+
+    Add gitignore
+
+commit 1933380e33f95ad5372aa7c816bb234d9a2bd870
+Author: Nil Quera <nlquera97@gmail.com>
+Date:   Mon Feb 1 17:23:57 2021 +0200
+
+    Create Assignment 1 folder
+
+commit 7e02bc3e2e133609bb93a87de97c940a9ef4227f
+Author: Nil Quera <nil.quera@est.fib.upc.edu>
+Date:   Mon Feb 1 16:20:39 2021 +0100
+
+    Initial commit
