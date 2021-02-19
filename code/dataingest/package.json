@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cassandra-driver": "^4.6.1",
     "csv-parse": "^4.15.1",
     "dotenv": "^8.2.0",
     "path": "^0.12.7",
