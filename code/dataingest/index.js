@@ -41,6 +41,7 @@ watch.createMonitor(
       }
 
       await lock.acquire();
+      // console.time("performance");
       console.log("[INFO] Processing file: " + f);
 
       const content = await fs.readFile(f);
@@ -86,32 +87,7 @@ watch.createMonitor(
 
       console.log("[INFO] Unlocking lock");
       lock.release();
-
-      // records.forEach((record) => {
-      //   //   console.log(record);
-      //   const date = new Date(Number(record.time));
-      //   const query =
-      //     "INSERT INTO metrics (dev_id, month, ts, acceleration, acceleration_x, acceleration_y, acceleration_z, battery, humidity, pressure, temperature) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
-      //   const params = [
-      //     record["dev-id"],
-      //     date.getMonth().toString(),
-      //     Number(record.time),
-      //     Number(record.acceleration),
-      //     Number(record.acceleration_x),
-      //     Number(record.acceleration_y),
-      //     Number(record.acceleration_z),
-      //     Number(record.battery),
-      //     Number(record.humidity),
-      //     Number(record.pressure),
-      //     Number(record.temperature),
-      //   ];
-
-      //   client.execute(query, params, { prepare: true }).then((result, err) => {
-      //     console.log(record);
-      //     if (err) console.log(err);
-      //     else console.log(result);
-      //   });
-      // });
+      // console.timeEnd("performance");
     });
   }
 );
