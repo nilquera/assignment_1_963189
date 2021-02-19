@@ -1,0 +1,296 @@
+CompilerOracle: dontinline org/apache/cassandra/db/Columns$Serializer.deserializeLargeSubset (Lorg/apache/cassandra/io/util/DataInputPlus;Lorg/apache/cassandra/db/Columns;I)Lorg/apache/cassandra/db/Columns;
+CompilerOracle: dontinline org/apache/cassandra/db/Columns$Serializer.serializeLargeSubset (Ljava/util/Collection;ILorg/apache/cassandra/db/Columns;ILorg/apache/cassandra/io/util/DataOutputPlus;)V
+CompilerOracle: dontinline org/apache/cassandra/db/Columns$Serializer.serializeLargeSubsetSize (Ljava/util/Collection;ILorg/apache/cassandra/db/Columns;I)I
+CompilerOracle: dontinline org/apache/cassandra/db/commitlog/AbstractCommitLogSegmentManager.advanceAllocatingFrom (Lorg/apache/cassandra/db/commitlog/CommitLogSegment;)V
+CompilerOracle: dontinline org/apache/cassandra/db/transform/BaseIterator.tryGetMoreContents ()Z
+CompilerOracle: dontinline org/apache/cassandra/db/transform/StoppingTransformation.stop ()V
+CompilerOracle: dontinline org/apache/cassandra/db/transform/StoppingTransformation.stopInPartition ()V
+CompilerOracle: dontinline org/apache/cassandra/io/util/BufferedDataOutputStreamPlus.doFlush (I)V
+CompilerOracle: dontinline org/apache/cassandra/io/util/BufferedDataOutputStreamPlus.writeExcessSlow ()V
+CompilerOracle: dontinline org/apache/cassandra/io/util/BufferedDataOutputStreamPlus.writeSlow (JI)V
+CompilerOracle: dontinline org/apache/cassandra/io/util/RebufferingInputStream.readPrimitiveSlowly (I)J
+CompilerOracle: inline org/apache/cassandra/db/rows/UnfilteredSerializer.serializeRowBody (Lorg/apache/cassandra/db/rows/Row;ILorg/apache/cassandra/db/SerializationHeader;Lorg/apache/cassandra/io/util/DataOutputPlus;)V
+CompilerOracle: inline org/apache/cassandra/io/util/Memory.checkBounds (JJ)V
+CompilerOracle: inline org/apache/cassandra/io/util/SafeMemory.checkBounds (JJ)V
+CompilerOracle: inline org/apache/cassandra/utils/AsymmetricOrdering.selectBoundary (Lorg/apache/cassandra/utils/AsymmetricOrdering/Op;II)I
+CompilerOracle: inline org/apache/cassandra/utils/AsymmetricOrdering.strictnessOfLessThan (Lorg/apache/cassandra/utils/AsymmetricOrdering/Op;)I
+CompilerOracle: inline org/apache/cassandra/utils/BloomFilter.indexes (Lorg/apache/cassandra/utils/IFilter/FilterKey;)[J
+CompilerOracle: inline org/apache/cassandra/utils/BloomFilter.setIndexes (JJIJ[J)V
+CompilerOracle: inline org/apache/cassandra/utils/ByteBufferUtil.compare (Ljava/nio/ByteBuffer;[B)I
+CompilerOracle: inline org/apache/cassandra/utils/ByteBufferUtil.compare ([BLjava/nio/ByteBuffer;)I
+CompilerOracle: inline org/apache/cassandra/utils/ByteBufferUtil.compareUnsigned (Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)I
+CompilerOracle: inline org/apache/cassandra/utils/FastByteOperations$UnsafeOperations.compareTo (Ljava/lang/Object;JILjava/lang/Object;JI)I
+CompilerOracle: inline org/apache/cassandra/utils/FastByteOperations$UnsafeOperations.compareTo (Ljava/lang/Object;JILjava/nio/ByteBuffer;)I
+CompilerOracle: inline org/apache/cassandra/utils/FastByteOperations$UnsafeOperations.compareTo (Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)I
+CompilerOracle: inline org/apache/cassandra/utils/vint/VIntCoding.encodeVInt (JI)[B
+INFO  [main] 2021-02-19 10:09:30,771 YamlConfigurationLoader.java:92 - Configuration location: file:/etc/cassandra/cassandra.yaml
+INFO  [main] 2021-02-19 10:09:39,009 Config.java:537 - Node configuration:[allocate_tokens_for_keyspace=null; authenticator=AllowAllAuthenticator; authorizer=AllowAllAuthorizer; auto_bootstrap=true; auto_snapshot=true; back_pressure_enabled=false; back_pressure_strategy=org.apache.cassandra.net.RateBasedBackPressure{high_ratio=0.9, factor=5, flow=FAST}; batch_size_fail_threshold_in_kb=50; batch_size_warn_threshold_in_kb=5; batchlog_replay_throttle_in_kb=1024; broadcast_address=172.22.0.4; broadcast_rpc_address=172.22.0.4; buffer_pool_use_heap_if_exhausted=true; cas_contention_timeout_in_ms=1000; cdc_enabled=false; cdc_free_space_check_interval_ms=250; cdc_raw_directory=null; cdc_total_space_in_mb=0; check_for_duplicate_rows_during_compaction=true; check_for_duplicate_rows_during_reads=true; client_encryption_options=<REDACTED>; cluster_name=coremds; column_index_cache_size_in_kb=2; column_index_size_in_kb=64; commit_failure_policy=stop; commitlog_compression=null; commitlog_directory=null; commitlog_max_compression_buffers_in_pool=3; commitlog_periodic_queue_size=-1; commitlog_segment_size_in_mb=32; commitlog_sync=periodic; commitlog_sync_batch_window_in_ms=NaN; commitlog_sync_period_in_ms=10000; commitlog_total_space_in_mb=null; compaction_large_partition_warning_threshold_mb=100; compaction_throughput_mb_per_sec=16; concurrent_compactors=null; concurrent_counter_writes=32; concurrent_materialized_view_writes=32; concurrent_reads=32; concurrent_replicates=null; concurrent_writes=32; counter_cache_keys_to_save=2147483647; counter_cache_save_period=7200; counter_cache_size_in_mb=null; counter_write_request_timeout_in_ms=5000; credentials_cache_max_entries=1000; credentials_update_interval_in_ms=-1; credentials_validity_in_ms=2000; cross_node_timeout=false; data_file_directories=[Ljava.lang.String;@79ca92b9; disk_access_mode=auto; disk_failure_policy=stop; disk_optimization_estimate_percentile=0.95; disk_optimization_page_cross_chance=0.1; disk_optimization_strategy=ssd; dynamic_snitch=true; dynamic_snitch_badness_threshold=0.1; dynamic_snitch_reset_interval_in_ms=600000; dynamic_snitch_update_interval_in_ms=100; enable_materialized_views=true; enable_sasi_indexes=true; enable_scripted_user_defined_functions=false; enable_user_defined_functions=false; enable_user_defined_functions_threads=true; encryption_options=<REDACTED>; endpoint_snitch=GossipingPropertyFileSnitch; file_cache_round_up=null; file_cache_size_in_mb=null; gc_log_threshold_in_ms=200; gc_warn_threshold_in_ms=1000; hinted_handoff_disabled_datacenters=[]; hinted_handoff_enabled=true; hinted_handoff_throttle_in_kb=1024; hints_compression=null; hints_directory=null; hints_flush_period_in_ms=10000; incremental_backups=false; index_interval=null; index_summary_capacity_in_mb=null; index_summary_resize_interval_in_minutes=60; initial_token=null; inter_dc_stream_throughput_outbound_megabits_per_sec=200; inter_dc_tcp_nodelay=false; internode_authenticator=null; internode_compression=dc; internode_recv_buff_size_in_bytes=0; internode_send_buff_size_in_bytes=0; key_cache_keys_to_save=2147483647; key_cache_save_period=14400; key_cache_size_in_mb=null; listen_address=172.22.0.4; listen_interface=null; listen_interface_prefer_ipv6=false; listen_on_broadcast_address=false; max_hint_window_in_ms=10800000; max_hints_delivery_threads=2; max_hints_file_size_in_mb=128; max_mutation_size_in_kb=null; max_streaming_retries=3; max_value_size_in_mb=256; memtable_allocation_type=heap_buffers; memtable_cleanup_threshold=null; memtable_flush_writers=0; memtable_heap_space_in_mb=null; memtable_offheap_space_in_mb=null; min_free_space_per_drive_in_mb=50; native_transport_flush_in_batches_legacy=true; native_transport_max_concurrent_connections=-1; native_transport_max_concurrent_connections_per_ip=-1; native_transport_max_concurrent_requests_in_bytes=-1; native_transport_max_concurrent_requests_in_bytes_per_ip=-1; native_transport_max_frame_size_in_mb=256; native_transport_max_negotiable_protocol_version=-2147483648; native_transport_max_threads=128; native_transport_port=9042; native_transport_port_ssl=null; num_tokens=256; otc_backlog_expiration_interval_ms=200; otc_coalescing_enough_coalesced_messages=8; otc_coalescing_strategy=DISABLED; otc_coalescing_window_us=200; partitioner=org.apache.cassandra.dht.Murmur3Partitioner; permissions_cache_max_entries=1000; permissions_update_interval_in_ms=-1; permissions_validity_in_ms=2000; phi_convict_threshold=8.0; prepared_statements_cache_size_mb=null; range_request_timeout_in_ms=10000; read_request_timeout_in_ms=5000; repair_session_max_tree_depth=18; request_scheduler=org.apache.cassandra.scheduler.NoScheduler; request_scheduler_id=null; request_scheduler_options=null; request_timeout_in_ms=10000; role_manager=CassandraRoleManager; roles_cache_max_entries=1000; roles_update_interval_in_ms=-1; roles_validity_in_ms=2000; row_cache_class_name=org.apache.cassandra.cache.OHCProvider; row_cache_keys_to_save=2147483647; row_cache_save_period=0; row_cache_size_in_mb=0; rpc_address=0.0.0.0; rpc_interface=null; rpc_interface_prefer_ipv6=false; rpc_keepalive=true; rpc_listen_backlog=50; rpc_max_threads=2147483647; rpc_min_threads=16; rpc_port=9160; rpc_recv_buff_size_in_bytes=null; rpc_send_buff_size_in_bytes=null; rpc_server_type=sync; saved_caches_directory=null; seed_provider=org.apache.cassandra.locator.SimpleSeedProvider{seeds=cas1, cas3}; server_encryption_options=<REDACTED>; slow_query_log_timeout_in_ms=500; snapshot_before_compaction=false; snapshot_on_duplicate_row_detection=false; ssl_storage_port=7001; sstable_preemptive_open_interval_in_mb=50; start_native_transport=true; start_rpc=false; storage_port=7000; stream_throughput_outbound_megabits_per_sec=200; streaming_keep_alive_period_in_secs=300; streaming_socket_timeout_in_ms=86400000; thrift_framed_transport_size_in_mb=15; thrift_max_message_length_in_mb=16; thrift_prepared_statements_cache_size_mb=null; tombstone_failure_threshold=100000; tombstone_warn_threshold=1000; tracetype_query_ttl=86400; tracetype_repair_ttl=604800; transparent_data_encryption_options=org.apache.cassandra.config.TransparentDataEncryptionOptions@1460a8c0; trickle_fsync=false; trickle_fsync_interval_in_kb=10240; truncate_request_timeout_in_ms=60000; unlogged_batch_across_partitions_warn_threshold=10; user_defined_function_fail_timeout=1500; user_defined_function_warn_timeout=500; user_function_timeout_policy=die; windows_timer_interval=1; write_request_timeout_in_ms=2000]
+INFO  [main] 2021-02-19 10:09:39,364 DatabaseDescriptor.java:381 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
+INFO  [main] 2021-02-19 10:09:39,365 DatabaseDescriptor.java:439 - Global memtable on-heap threshold is enabled at 481MB
+INFO  [main] 2021-02-19 10:09:39,365 DatabaseDescriptor.java:443 - Global memtable off-heap threshold is enabled at 481MB
+WARN  [main] 2021-02-19 10:09:46,024 DatabaseDescriptor.java:579 - Only 32.015GiB free across all data volumes. Consider adding more capacity to your cluster or removing obsolete snapshots
+INFO  [main] 2021-02-19 10:09:47,730 RateBasedBackPressure.java:123 - Initialized back-pressure with high ratio: 0.9, factor: 5, flow: FAST, window size: 2000.
+INFO  [main] 2021-02-19 10:09:47,731 DatabaseDescriptor.java:775 - Back-pressure is disabled with strategy org.apache.cassandra.net.RateBasedBackPressure{high_ratio=0.9, factor=5, flow=FAST}.
+INFO  [main] 2021-02-19 10:09:52,196 GossipingPropertyFileSnitch.java:64 - Loaded cassandra-topology.properties for compatibility
+INFO  [ScheduledTasks:1] 2021-02-19 10:09:57,376 TokenMetadata.java:517 - Updating topology for all endpoints that have changed
+INFO  [main] 2021-02-19 10:09:57,816 JMXServerUtils.java:253 - Configured JMX server at: service:jmx:rmi://127.0.0.1/jndi/rmi://127.0.0.1:7199/jmxrmi
+INFO  [main] 2021-02-19 10:09:57,891 CassandraDaemon.java:490 - Hostname: 4a0f4226efdc
+INFO  [main] 2021-02-19 10:09:57,892 CassandraDaemon.java:497 - JVM vendor/version: OpenJDK 64-Bit Server VM/1.8.0_282
+INFO  [main] 2021-02-19 10:09:57,893 CassandraDaemon.java:498 - Heap size: 1.881GiB/1.881GiB
+INFO  [main] 2021-02-19 10:09:57,893 CassandraDaemon.java:503 - Code Cache Non-heap memory: init = 2555904(2496K) used = 5367872(5242K) committed = 5439488(5312K) max = 251658240(245760K)
+INFO  [main] 2021-02-19 10:09:57,894 CassandraDaemon.java:503 - Metaspace Non-heap memory: init = 0(0K) used = 20874768(20385K) committed = 21495808(20992K) max = -1(-1K)
+INFO  [main] 2021-02-19 10:09:57,895 CassandraDaemon.java:503 - Compressed Class Space Non-heap memory: init = 0(0K) used = 2510192(2451K) committed = 2621440(2560K) max = 1073741824(1048576K)
+INFO  [main] 2021-02-19 10:09:57,895 CassandraDaemon.java:503 - Par Eden Space Heap memory: init = 335544320(327680K) used = 134255576(131108K) committed = 335544320(327680K) max = 335544320(327680K)
+INFO  [main] 2021-02-19 10:09:57,896 CassandraDaemon.java:503 - Par Survivor Space Heap memory: init = 41943040(40960K) used = 0(0K) committed = 41943040(40960K) max = 41943040(40960K)
+INFO  [main] 2021-02-19 10:09:57,896 CassandraDaemon.java:503 - CMS Old Gen Heap memory: init = 1642070016(1603584K) used = 0(0K) committed = 1642070016(1603584K) max = 1642070016(1603584K)
+INFO  [main] 2021-02-19 10:09:57,897 CassandraDaemon.java:505 - Classpath: /etc/cassandra:/opt/cassandra/build/classes/main:/opt/cassandra/build/classes/thrift:/opt/cassandra/lib/HdrHistogram-2.1.9.jar:/opt/cassandra/lib/ST4-4.0.8.jar:/opt/cassandra/lib/airline-0.6.jar:/opt/cassandra/lib/antlr-runtime-3.5.2.jar:/opt/cassandra/lib/apache-cassandra-3.11.10.jar:/opt/cassandra/lib/apache-cassandra-thrift-3.11.10.jar:/opt/cassandra/lib/asm-5.0.4.jar:/opt/cassandra/lib/caffeine-2.2.6.jar:/opt/cassandra/lib/cassandra-driver-core-3.0.1-shaded.jar:/opt/cassandra/lib/commons-cli-1.1.jar:/opt/cassandra/lib/commons-codec-1.9.jar:/opt/cassandra/lib/commons-lang3-3.1.jar:/opt/cassandra/lib/commons-math3-3.2.jar:/opt/cassandra/lib/compress-lzf-0.8.4.jar:/opt/cassandra/lib/concurrent-trees-2.4.0.jar:/opt/cassandra/lib/concurrentlinkedhashmap-lru-1.4.jar:/opt/cassandra/lib/disruptor-3.0.1.jar:/opt/cassandra/lib/ecj-4.4.2.jar:/opt/cassandra/lib/guava-18.0.jar:/opt/cassandra/lib/high-scale-lib-1.0.6.jar:/opt/cassandra/lib/hppc-0.5.4.jar:/opt/cassandra/lib/jackson-annotations-2.9.10.jar:/opt/cassandra/lib/jackson-core-2.9.10.jar:/opt/cassandra/lib/jackson-databind-2.9.10.4.jar:/opt/cassandra/lib/jamm-0.3.0.jar:/opt/cassandra/lib/javax.inject.jar:/opt/cassandra/lib/jbcrypt-0.3m.jar:/opt/cassandra/lib/jcl-over-slf4j-1.7.7.jar:/opt/cassandra/lib/jctools-core-1.2.1.jar:/opt/cassandra/lib/jflex-1.6.0.jar:/opt/cassandra/lib/jna-4.2.2.jar:/opt/cassandra/lib/joda-time-2.4.jar:/opt/cassandra/lib/json-simple-1.1.jar:/opt/cassandra/lib/jstackjunit-0.0.1.jar:/opt/cassandra/lib/libthrift-0.9.2.jar:/opt/cassandra/lib/log4j-over-slf4j-1.7.7.jar:/opt/cassandra/lib/logback-classic-1.1.3.jar:/opt/cassandra/lib/logback-core-1.1.3.jar:/opt/cassandra/lib/lz4-1.3.0.jar:/opt/cassandra/lib/metrics-core-3.1.5.jar:/opt/cassandra/lib/metrics-jvm-3.1.5.jar:/opt/cassandra/lib/metrics-logback-3.1.5.jar:/opt/cassandra/lib/netty-all-4.0.44.Final.jar:/opt/cassandra/lib/ohc-core-0.4.4.jar:/opt/cassandra/lib/ohc-core-j8-0.4.4.jar:/opt/cassandra/lib/reporter-config-base-3.0.3.jar:/opt/cassandra/lib/reporter-config3-3.0.3.jar:/opt/cassandra/lib/sigar-1.6.4.jar:/opt/cassandra/lib/slf4j-api-1.7.7.jar:/opt/cassandra/lib/snakeyaml-1.11.jar:/opt/cassandra/lib/snappy-java-1.1.1.7.jar:/opt/cassandra/lib/snowball-stemmer-1.3.0.581.1.jar:/opt/cassandra/lib/stream-2.5.2.jar:/opt/cassandra/lib/thrift-server-0.3.7.jar:/opt/cassandra/lib/jsr223/*/*.jar::/opt/cassandra/lib/jamm-0.3.0.jar
+INFO  [main] 2021-02-19 10:09:57,898 CassandraDaemon.java:507 - JVM Arguments: [-Xloggc:/opt/cassandra/logs/gc.log, -ea, -XX:+UseThreadPriorities, -XX:ThreadPriorityPolicy=42, -XX:+HeapDumpOnOutOfMemoryError, -Xss256k, -XX:StringTableSize=1000003, -XX:+AlwaysPreTouch, -XX:-UseBiasedLocking, -XX:+UseTLAB, -XX:+ResizeTLAB, -XX:+UseNUMA, -XX:+PerfDisableSharedMem, -Djava.net.preferIPv4Stack=true, -XX:+UseParNewGC, -XX:+UseConcMarkSweepGC, -XX:+CMSParallelRemarkEnabled, -XX:SurvivorRatio=8, -XX:MaxTenuringThreshold=1, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:CMSWaitDuration=10000, -XX:+CMSParallelInitialMarkEnabled, -XX:+CMSEdenChunksRecordAlways, -XX:+CMSClassUnloadingEnabled, -XX:+PrintGCDetails, -XX:+PrintGCDateStamps, -XX:+PrintHeapAtGC, -XX:+PrintTenuringDistribution, -XX:+PrintGCApplicationStoppedTime, -XX:+PrintPromotionFailure, -XX:+UseGCLogFileRotation, -XX:NumberOfGCLogFiles=10, -XX:GCLogFileSize=10M, -Xms1966M, -Xmx1966M, -Xmn400M, -XX:+UseCondCardMark, -XX:CompileCommandFile=/etc/cassandra/hotspot_compiler, -javaagent:/opt/cassandra/lib/jamm-0.3.0.jar, -Dcassandra.jmx.local.port=7199, -Dcom.sun.management.jmxremote.authenticate=false, -Dcom.sun.management.jmxremote.password.file=/etc/cassandra/jmxremote.password, -Djava.library.path=/opt/cassandra/lib/sigar-bin, -Dcassandra.libjemalloc=/usr/local/lib/libjemalloc.so, -XX:OnOutOfMemoryError=kill -9 %p, -Dlogback.configurationFile=logback.xml, -Dcassandra.logdir=/opt/cassandra/logs, -Dcassandra.storagedir=/opt/cassandra/data, -Dcassandra-foreground=yes]
+WARN  [main] 2021-02-19 10:09:59,618 NativeLibrary.java:189 - Unable to lock JVM memory (ENOMEM). This can result in part of the JVM being swapped out, especially with mmapped I/O enabled. Increase RLIMIT_MEMLOCK or run Cassandra as root.
+INFO  [main] 2021-02-19 10:09:59,619 StartupChecks.java:140 - jemalloc seems to be preloaded from /usr/local/lib/libjemalloc.so
+WARN  [main] 2021-02-19 10:09:59,620 StartupChecks.java:169 - JMX is not enabled to receive remote connections. Please see cassandra-env.sh for more info.
+INFO  [main] 2021-02-19 10:09:59,623 SigarLibrary.java:44 - Initializing SIGAR library
+WARN  [main] 2021-02-19 10:10:01,052 SigarLibrary.java:174 - Cassandra server running in degraded mode. Is swap disabled? : false,  Address space adequate? : true,  nofile limit adequate? : true, nproc limit adequate? : true 
+WARN  [main] 2021-02-19 10:10:01,107 StartupChecks.java:311 - Maximum number of memory map areas per process (vm.max_map_count) 65530 is too low, recommended value: 1048575, you can change it with sysctl.
+WARN  [main] 2021-02-19 10:10:01,154 StartupChecks.java:332 - Directory /opt/cassandra/data/data doesn't exist
+WARN  [main] 2021-02-19 10:10:01,200 StartupChecks.java:332 - Directory /opt/cassandra/data/commitlog doesn't exist
+WARN  [main] 2021-02-19 10:10:01,203 StartupChecks.java:332 - Directory /opt/cassandra/data/saved_caches doesn't exist
+WARN  [main] 2021-02-19 10:10:01,205 StartupChecks.java:332 - Directory /opt/cassandra/data/hints doesn't exist
+INFO  [main] 2021-02-19 10:10:01,848 QueryProcessor.java:116 - Initialized prepared statement caches with 10 MB (native) and 10 MB (Thrift)
+INFO  [main] 2021-02-19 10:10:09,805 ColumnFamilyStore.java:421 - Initializing system.IndexInfo
+INFO  [main] 2021-02-19 10:10:48,573 ColumnFamilyStore.java:421 - Initializing system.batches
+INFO  [main] 2021-02-19 10:10:48,584 ColumnFamilyStore.java:421 - Initializing system.paxos
+INFO  [main] 2021-02-19 10:10:48,934 ColumnFamilyStore.java:421 - Initializing system.local
+INFO  [main] 2021-02-19 10:10:49,277 ColumnFamilyStore.java:421 - Initializing system.peers
+INFO  [main] 2021-02-19 10:10:49,644 ColumnFamilyStore.java:421 - Initializing system.peer_events
+INFO  [main] 2021-02-19 10:10:50,188 ColumnFamilyStore.java:421 - Initializing system.range_xfers
+INFO  [main] 2021-02-19 10:10:50,515 ColumnFamilyStore.java:421 - Initializing system.compaction_history
+INFO  [main] 2021-02-19 10:10:50,822 ColumnFamilyStore.java:421 - Initializing system.sstable_activity
+INFO  [main] 2021-02-19 10:10:51,364 ColumnFamilyStore.java:421 - Initializing system.size_estimates
+INFO  [main] 2021-02-19 10:10:51,653 ColumnFamilyStore.java:421 - Initializing system.available_ranges
+INFO  [main] 2021-02-19 10:10:52,119 ColumnFamilyStore.java:421 - Initializing system.transferred_ranges
+INFO  [main] 2021-02-19 10:10:52,512 ColumnFamilyStore.java:421 - Initializing system.views_builds_in_progress
+INFO  [main] 2021-02-19 10:10:52,964 ColumnFamilyStore.java:421 - Initializing system.built_views
+INFO  [main] 2021-02-19 10:10:53,190 ColumnFamilyStore.java:421 - Initializing system.hints
+INFO  [main] 2021-02-19 10:10:53,566 ColumnFamilyStore.java:421 - Initializing system.batchlog
+INFO  [main] 2021-02-19 10:10:53,577 ColumnFamilyStore.java:421 - Initializing system.prepared_statements
+INFO  [main] 2021-02-19 10:10:53,582 ColumnFamilyStore.java:421 - Initializing system.schema_keyspaces
+INFO  [main] 2021-02-19 10:10:53,595 ColumnFamilyStore.java:421 - Initializing system.schema_columnfamilies
+INFO  [main] 2021-02-19 10:10:53,602 ColumnFamilyStore.java:421 - Initializing system.schema_columns
+INFO  [main] 2021-02-19 10:10:53,608 ColumnFamilyStore.java:421 - Initializing system.schema_triggers
+INFO  [main] 2021-02-19 10:10:53,616 ColumnFamilyStore.java:421 - Initializing system.schema_usertypes
+INFO  [main] 2021-02-19 10:10:53,624 ColumnFamilyStore.java:421 - Initializing system.schema_functions
+INFO  [main] 2021-02-19 10:10:53,631 ColumnFamilyStore.java:421 - Initializing system.schema_aggregates
+INFO  [main] 2021-02-19 10:10:53,637 ViewManager.java:137 - Not submitting build tasks for views in keyspace system as storage service is not initialized
+INFO  [main] 2021-02-19 10:10:53,718 ApproximateTime.java:44 - Scheduling approximate time-check task with a precision of 10 milliseconds
+INFO  [main] 2021-02-19 10:10:53,763 ColumnFamilyStore.java:421 - Initializing system_schema.keyspaces
+INFO  [main] 2021-02-19 10:10:53,773 ColumnFamilyStore.java:421 - Initializing system_schema.tables
+INFO  [main] 2021-02-19 10:10:53,790 ColumnFamilyStore.java:421 - Initializing system_schema.columns
+INFO  [main] 2021-02-19 10:10:53,797 ColumnFamilyStore.java:421 - Initializing system_schema.triggers
+INFO  [main] 2021-02-19 10:10:53,831 ColumnFamilyStore.java:421 - Initializing system_schema.dropped_columns
+INFO  [main] 2021-02-19 10:10:53,839 ColumnFamilyStore.java:421 - Initializing system_schema.views
+INFO  [main] 2021-02-19 10:10:53,845 ColumnFamilyStore.java:421 - Initializing system_schema.types
+INFO  [main] 2021-02-19 10:10:53,852 ColumnFamilyStore.java:421 - Initializing system_schema.functions
+INFO  [main] 2021-02-19 10:10:53,887 ColumnFamilyStore.java:421 - Initializing system_schema.aggregates
+INFO  [main] 2021-02-19 10:10:53,895 ColumnFamilyStore.java:421 - Initializing system_schema.indexes
+INFO  [main] 2021-02-19 10:10:54,147 ViewManager.java:137 - Not submitting build tasks for views in keyspace system_schema as storage service is not initialized
+INFO  [MemtableFlushWriter:1] 2021-02-19 10:10:56,504 CacheService.java:100 - Initializing key cache with capacity of 96 MBs.
+INFO  [MemtableFlushWriter:1] 2021-02-19 10:10:56,511 CacheService.java:122 - Initializing row cache with capacity of 0 MBs
+INFO  [MemtableFlushWriter:1] 2021-02-19 10:10:56,512 CacheService.java:151 - Initializing counter cache with capacity of 48 MBs
+INFO  [MemtableFlushWriter:1] 2021-02-19 10:10:56,513 CacheService.java:162 - Scheduling counter cache save to every 7200 seconds (going to save all keys).
+INFO  [CompactionExecutor:2] 2021-02-19 10:10:57,364 BufferPool.java:234 - Global buffer pool is enabled, when pool is exhausted (max is 481.000MiB) it will allocate on heap
+INFO  [main] 2021-02-19 10:10:58,639 StorageService.java:674 - Populating token metadata from system tables
+INFO  [main] 2021-02-19 10:10:58,675 StorageService.java:681 - Token metadata: 
+INFO  [main] 2021-02-19 10:10:58,705 AutoSavingCache.java:174 - Completed loading (0 ms; 4 keys) KeyCache cache
+INFO  [main] 2021-02-19 10:10:58,892 CommitLog.java:142 - No commitlog files found; skipping replay
+INFO  [main] 2021-02-19 10:10:58,893 StorageService.java:674 - Populating token metadata from system tables
+INFO  [main] 2021-02-19 10:10:58,915 StorageService.java:681 - Token metadata: 
+INFO  [main] 2021-02-19 10:10:59,027 QueryProcessor.java:163 - Preloaded 0 prepared statements
+INFO  [main] 2021-02-19 10:10:59,028 StorageService.java:692 - Cassandra version: 3.11.10
+INFO  [main] 2021-02-19 10:10:59,028 StorageService.java:693 - Thrift API version: 20.1.0
+INFO  [main] 2021-02-19 10:10:59,029 StorageService.java:694 - CQL supported versions: 3.4.4 (default: 3.4.4)
+INFO  [main] 2021-02-19 10:10:59,029 StorageService.java:696 - Native protocol supported versions: 3/v3, 4/v4, 5/v5-beta (default: 4/v4)
+INFO  [main] 2021-02-19 10:10:59,129 IndexSummaryManager.java:87 - Initializing index summary manager with a memory pool size of 96 MB and a resize interval of 60 minutes
+INFO  [main] 2021-02-19 10:10:59,242 MessagingService.java:750 - Starting Messaging Service on /172.22.0.4:7000 (eth0)
+WARN  [main] 2021-02-19 10:10:59,248 SystemKeyspace.java:1130 - No host ID found, created 9802ac51-e512-47f1-bcda-d9690c17d16a (Note: This should happen exactly once per node).
+INFO  [main] 2021-02-19 10:10:59,285 OutboundTcpConnection.java:108 - OutboundTcpConnection using coalescing strategy DISABLED
+INFO  [HANDSHAKE-cas1/172.22.0.2] 2021-02-19 10:10:59,305 OutboundTcpConnection.java:561 - Handshaking version with cas1/172.22.0.2
+INFO  [HANDSHAKE-cas3/172.22.0.3] 2021-02-19 10:10:59,309 OutboundTcpConnection.java:561 - Handshaking version with cas3/172.22.0.3
+INFO  [main] 2021-02-19 10:11:00,327 StorageService.java:778 - Loading persisted ring state
+INFO  [main] 2021-02-19 10:11:00,328 StorageService.java:907 - Starting up server gossip
+WARN  [Service Thread] 2021-02-19 10:11:06,773 GCInspector.java:283 - ParNew GC in 6061ms.  CMS Old Gen: 0 -> 7030480; Par Eden Space: 335544320 -> 0; Par Survivor Space: 31004264 -> 39228288
+INFO  [Service Thread] 2021-02-19 10:11:06,775 StatusLogger.java:47 - Pool Name                    Active   Pending      Completed   Blocked  All Time Blocked
+INFO  [Service Thread] 2021-02-19 10:11:06,790 StatusLogger.java:51 - MutationStage                     0         0              0         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,791 StatusLogger.java:51 - ViewMutationStage                 0         0              0         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,792 StatusLogger.java:51 - ReadStage                         0         0              0         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,793 StatusLogger.java:51 - RequestResponseStage              0         0              0         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,794 StatusLogger.java:51 - ReadRepairStage                   0         0              0         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,796 StatusLogger.java:51 - CounterMutationStage              0         0              0         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,797 StatusLogger.java:51 - MiscStage                         0         0              0         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,798 StatusLogger.java:51 - CompactionExecutor                0         0              8         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,799 StatusLogger.java:51 - MemtableReclaimMemory             0         0              8         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,800 StatusLogger.java:51 - GossipStage                       0         0              3         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,801 StatusLogger.java:51 - SecondaryIndexManagement          0         0              0         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,802 StatusLogger.java:51 - HintsDispatcher                   0         0              0         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,803 StatusLogger.java:51 - MigrationStage                    0         0              0         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,803 StatusLogger.java:51 - MemtablePostFlush                 0         0              8         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,804 StatusLogger.java:51 - PerDiskMemtableFlushWriter_0         0         0              8         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,804 StatusLogger.java:51 - ValidationExecutor                0         0              0         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,805 StatusLogger.java:51 - Sampler                           0         0              0         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,806 StatusLogger.java:51 - MemtableFlushWriter               0         0              8         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,806 StatusLogger.java:51 - InternalResponseStage             0         0              0         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,807 StatusLogger.java:51 - AntiEntropyStage                  0         0              0         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,807 StatusLogger.java:51 - CacheCleanupExecutor              0         0              0         0                 0
+
+INFO  [Service Thread] 2021-02-19 10:11:06,808 StatusLogger.java:61 - CompactionManager                 0         1
+INFO  [Service Thread] 2021-02-19 10:11:06,809 StatusLogger.java:73 - MessagingService                n/a       0/0
+INFO  [Service Thread] 2021-02-19 10:11:06,810 StatusLogger.java:83 - Cache Type                     Size                 Capacity               KeysToSave
+INFO  [Service Thread] 2021-02-19 10:11:06,810 StatusLogger.java:85 - KeyCache                        144                100663296                      all
+INFO  [Service Thread] 2021-02-19 10:11:06,810 StatusLogger.java:91 - RowCache                          0                        0                      all
+INFO  [Service Thread] 2021-02-19 10:11:06,810 StatusLogger.java:98 - Table                       Memtable ops,data
+INFO  [Service Thread] 2021-02-19 10:11:06,811 StatusLogger.java:101 - system.compaction_history               2,384
+INFO  [Service Thread] 2021-02-19 10:11:06,811 StatusLogger.java:101 - system.schema_aggregates                  0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,811 StatusLogger.java:101 - system.schema_triggers                    0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,811 StatusLogger.java:101 - system.size_estimates                     0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,811 StatusLogger.java:101 - system.paxos                              0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,812 StatusLogger.java:101 - system.views_builds_in_progress                 0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,812 StatusLogger.java:101 - system.batches                            0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,812 StatusLogger.java:101 - system.schema_keyspaces                   0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,812 StatusLogger.java:101 - system.sstable_activity                  8,64
+INFO  [Service Thread] 2021-02-19 10:11:06,812 StatusLogger.java:101 - system.batchlog                           0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,812 StatusLogger.java:101 - system.schema_columns                     0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,812 StatusLogger.java:101 - system.hints                              0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,812 StatusLogger.java:101 - system.IndexInfo                          0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,813 StatusLogger.java:101 - system.schema_columnfamilies                 0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,813 StatusLogger.java:101 - system.schema_functions                   0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,813 StatusLogger.java:101 - system.built_views                        0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,813 StatusLogger.java:101 - system.peer_events                        0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,813 StatusLogger.java:101 - system.range_xfers                        0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,813 StatusLogger.java:101 - system.peers                              0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,814 StatusLogger.java:101 - system.transferred_ranges                 0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,814 StatusLogger.java:101 - system.schema_usertypes                   0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,814 StatusLogger.java:101 - system.local                             1,61
+INFO  [Service Thread] 2021-02-19 10:11:06,814 StatusLogger.java:101 - system.available_ranges                   0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,814 StatusLogger.java:101 - system.prepared_statements                 0,0
+INFO  [Service Thread] 2021-02-19 10:11:06,814 StatusLogger.java:101 - system_schema.columns               179,27572
+INFO  [Service Thread] 2021-02-19 10:11:06,814 StatusLogger.java:101 - system_schema.types                      2,16
+INFO  [Service Thread] 2021-02-19 10:11:06,814 StatusLogger.java:101 - system_schema.indexes                    2,16
+INFO  [Service Thread] 2021-02-19 10:11:06,815 StatusLogger.java:101 - system_schema.keyspaces                 4,242
+INFO  [Service Thread] 2021-02-19 10:11:06,815 StatusLogger.java:101 - system_schema.dropped_columns                2,16
+INFO  [Service Thread] 2021-02-19 10:11:06,815 StatusLogger.java:101 - system_schema.aggregates                 2,16
+INFO  [Service Thread] 2021-02-19 10:11:06,815 StatusLogger.java:101 - system_schema.triggers                   2,16
+INFO  [Service Thread] 2021-02-19 10:11:06,815 StatusLogger.java:101 - system_schema.tables                 29,18824
+INFO  [Service Thread] 2021-02-19 10:11:06,815 StatusLogger.java:101 - system_schema.views                      2,16
+INFO  [Service Thread] 2021-02-19 10:11:06,815 StatusLogger.java:101 - system_schema.functions                  2,16
+INFO  [HANDSHAKE-cas1/172.22.0.2] 2021-02-19 10:11:06,833 OutboundTcpConnection.java:561 - Handshaking version with cas1/172.22.0.2
+INFO  [HANDSHAKE-cas3/172.22.0.3] 2021-02-19 10:11:07,722 OutboundTcpConnection.java:561 - Handshaking version with cas3/172.22.0.3
+INFO  [main] 2021-02-19 10:11:07,802 StorageService.java:1536 - JOINING: waiting for ring information
+INFO  [GossipStage:1] 2021-02-19 10:11:08,196 Gossiper.java:1142 - Node /172.22.0.2 is now part of the cluster
+INFO  [GossipStage:1] 2021-02-19 10:11:08,278 TokenMetadata.java:497 - Updating topology for /172.22.0.2
+INFO  [GossipStage:1] 2021-02-19 10:11:08,279 TokenMetadata.java:497 - Updating topology for /172.22.0.2
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,281 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,283 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,284 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,285 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,286 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,290 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,294 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,295 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+INFO  [GossipStage:1] 2021-02-19 10:11:08,295 Gossiper.java:1142 - Node /172.22.0.3 is now part of the cluster
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,296 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,301 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,302 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,304 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,306 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,309 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,311 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,314 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,321 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,324 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,325 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,327 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,328 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,331 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,333 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,334 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,337 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,338 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,339 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,339 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,340 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,348 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,349 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,350 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,360 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+INFO  [GossipStage:1] 2021-02-19 10:11:08,361 TokenMetadata.java:497 - Updating topology for /172.22.0.3
+INFO  [GossipStage:1] 2021-02-19 10:11:08,362 TokenMetadata.java:497 - Updating topology for /172.22.0.3
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,362 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.3 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,363 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.2 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,364 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.3 is down.
+INFO  [GossipStage:1] 2021-02-19 10:11:08,365 Gossiper.java:1104 - InetAddress /172.22.0.2 is now UP
+INFO  [MigrationStage:1] 2021-02-19 10:11:08,366 MigrationCoordinator.java:448 - Sending schema pull request to /172.22.0.2 at 1613729468366 with timeout 10000
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,368 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.3 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,370 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.3 is down.
+WARN  [MigrationStage:1] 2021-02-19 10:11:08,373 MigrationCoordinator.java:426 - Can't send schema pull request: node /172.22.0.3 is down.
+INFO  [GossipStage:1] 2021-02-19 10:11:08,374 Gossiper.java:1104 - InetAddress /172.22.0.3 is now UP
+INFO  [MigrationStage:1] 2021-02-19 10:11:08,375 MigrationCoordinator.java:448 - Sending schema pull request to /172.22.0.3 at 1613729468375 with timeout 10000
+WARN  [GossipTasks:1] 2021-02-19 10:11:08,793 FailureDetector.java:278 - Not marking nodes down due to local pause of 71536932291 > 5000000000
+INFO  [InternalResponseStage:1] 2021-02-19 10:11:12,134 ViewManager.java:137 - Not submitting build tasks for views in keyspace system_traces as storage service is not initialized
+INFO  [InternalResponseStage:1] 2021-02-19 10:11:12,142 ColumnFamilyStore.java:421 - Initializing system_traces.events
+INFO  [InternalResponseStage:1] 2021-02-19 10:11:12,169 ColumnFamilyStore.java:421 - Initializing system_traces.sessions
+INFO  [InternalResponseStage:1] 2021-02-19 10:11:12,181 ViewManager.java:137 - Not submitting build tasks for views in keyspace system_distributed as storage service is not initialized
+INFO  [InternalResponseStage:1] 2021-02-19 10:11:12,183 ColumnFamilyStore.java:421 - Initializing system_distributed.parent_repair_history
+INFO  [InternalResponseStage:1] 2021-02-19 10:11:12,305 ColumnFamilyStore.java:421 - Initializing system_distributed.repair_history
+INFO  [InternalResponseStage:1] 2021-02-19 10:11:12,399 ColumnFamilyStore.java:421 - Initializing system_distributed.view_build_status
+INFO  [InternalResponseStage:1] 2021-02-19 10:11:12,483 ViewManager.java:137 - Not submitting build tasks for views in keyspace system_auth as storage service is not initialized
+INFO  [InternalResponseStage:1] 2021-02-19 10:11:12,484 ColumnFamilyStore.java:421 - Initializing system_auth.resource_role_permissons_index
+INFO  [InternalResponseStage:1] 2021-02-19 10:11:12,491 ColumnFamilyStore.java:421 - Initializing system_auth.role_members
+INFO  [InternalResponseStage:1] 2021-02-19 10:11:12,497 ColumnFamilyStore.java:421 - Initializing system_auth.role_permissions
+INFO  [InternalResponseStage:1] 2021-02-19 10:11:12,504 ColumnFamilyStore.java:421 - Initializing system_auth.roles
+INFO  [main] 2021-02-19 10:11:12,804 Gossiper.java:1796 - Waiting for gossip to settle...
+INFO  [main] 2021-02-19 10:11:20,817 Gossiper.java:1827 - No gossip backlog; proceeding
+INFO  [main] 2021-02-19 10:11:20,818 StorageService.java:1536 - JOINING: schema complete, ready to bootstrap
+INFO  [main] 2021-02-19 10:11:20,819 StorageService.java:1536 - JOINING: waiting for pending range calculation
+INFO  [main] 2021-02-19 10:11:20,819 StorageService.java:1536 - JOINING: calculation complete, ready to bootstrap
+INFO  [main] 2021-02-19 10:11:20,825 StorageService.java:1536 - JOINING: getting bootstrap token
+INFO  [main] 2021-02-19 10:11:20,830 BootStrapper.java:228 - Generated random tokens. tokens are [-1735436367716918322, -2627788262026802420, -8200710408428056928, -6303632439283879706, -6607237659777760699, -5107453214733490259, 6074395237809683699, 2807702731294656397, -5720579114336198290, 8608220413560805174, -4894744284153640275, -2492833824394058930, -1368365663286170806, -6614256820934020260, 8229269065125549406, 8304195814444599416, 2024079544554902013, -3042919702679150459, -5457033690981760750, 4469719336178757257, -6088081262322087316, 7593152370642061076, -7711148092768613013, -5951314323013058955, -2530880018396532590, 8601639333716587040, -6037175724138348884, -2426648861681679092, -123894435838830349, 4676639567332103014, -1990394149190439622, 9000202287381080727, 4254789861177334923, 2895125481778663111, -1122187083112174837, 7650757585270599617, -2961932969072190820, -295191536911227699, -7009816371018041572, 6438715956694073712, -6921694415703652349, -316472061021828880, 8000336577206095643, 2367507243164584997, -8299757017276932279, 7803139212399192639, -6610697061248218473, -8541935421543354545, -8228495434876333273, -7786565017641791743, -1513622271704829219, 9106331198948196250, -9156868035383117721, -5238055290729281184, -6263510574135498525, -4417103614803425033, -5649479739167289142, 8808935907620376117, 3427805709046524434, 800877761656018789, -3595527108430796060, -2416881671196064058, -5746816248479111509, -1868684957917752643, -6171807070591817951, -5036821804877164943, 4468933977315540257, 2997227483533551206, -3981566310460713187, -2285366668708720329, 6833604579692714902, 852827638712029569, -1410365545340478315, 5546949072567932374, 7551994329973716291, 722691921018526885, -4338411705216820764, 2435630148687074119, 4791615731815758568, 4254835656784340414, -4379874531060838985, -6868084589795649865, 5988866667951013236, -5933961188479862469, -1018184418108875990, 4892243446244425248, -4978501019059295032, -9053344587143620620, 8749098190080366459, -3430890525029507671, 9134285043105109698, -3847369735449424033, -1354593380282502963, -7504963320241742262, 2314740868821903624, -4620749998641813448, 6731958642130651066, 833142592430697711, -4994436551160316749, -571357823180030454, -875099733125794319, 7634203883311977735, 256148891939654295, 8796263243254838532, 5462116161399348377, 5880423327172043654, 6291538473973681305, -1324641486521966128, 4938778711051009316, -1894832301884796852, -5923081914169290492, 8069711577113001837, 7936088178446505644, -1602712159855404473, 5125065788126182946, 7347047081108898520, -340272434309150275, 8498295976014222966, 3089651685021726852, 6904707655970370566, 641079742270900830, 189864025263788884, 5100949120555310126, -7408761592737180623, 352355742567433183, -9013401691227037598, -4223285323153529459, -1666804556360507893, -173623414643316127, -1204978809420731631, 2386855461520011143, -1927524809922349807, -4126353603986531922, -8142467021580420651, -6418211998406043159, 4462517947658043012, 5175734724406456201, -8676789732105428020, 6502178850815561496, 4355142805692271779, 3937263437557550752, 6602505274264119575, -6718753004957819496, 26481164055371234, -4623239688962222908, 8812585447761522713, -7456943046014538819, 5706883897963411478, 5424792776766720344, -1609227043495080006, -5901800888391363573, 7106898549615620027, -1176064242039240885, -2505877583055211803, -4124491133097004979, -5993035585577063050, 8652006763427748630, -187855279783565952, 6672958437517178052, 1091278204678934185, -1917923837348608856, -3495850988575807874, -7547472607324240992, -2605961278739943773, -4214706851571046019, 7584113391776962004, -2557574891241088015, 4053147008323708767, -4767520331628777777, 8278353097323369171, 6594615906187606658, 5793329501590998613, 3522316943584798622, 4178353918727738317, 5615334751380927868, 68958741485387348, 8719348424332953170, 7238853491046242593, -32507009329295379, -5704532325651494826, 4102057149728670561, 2619881062803494628, -386495703731598806, 2931540956203324985, 7158521435985614235, -7873169967046853220, 3683051524345350576, 903492237569447215, -4298650744180720784, -2510607226493911030, -8083163049605870564, 6892589840804029614, -7861291650209023770, -395124675185767352, -7856757335319529851, -1797375265342231056, 3563743165465422786, -919097509877068744, -6607727430453866773, 5587298035792431704, 5421090672483290371, -1804044570548416251, 6181188998029024764, 5971332350411364450, -6928870091424153394, -3605237083181650821, -9180568251221118106, 3973681216886966149, -1737472415864294621, -880108464821186859, 352907596089970088, -2436762760479719151, -1209326538278450431, -6450876081490467066, 7489643202697875382, 4895398751621225, -6323937097054192363, -3084138527222583792, 6118361349234853108, 3071133036483239314, 7314936243462327243, 1352608837839350426, 4512105990193590591, -1134544837478568745, 7335894322867578149, -5606267901006126503, 7251247966774306080, 5302224643160677252, -3320943503928590745, 1568770259256957701, -3215068101977167652, 5433277172665190026, -8774614882021378582, 6174446079343571337, 175428532193533493, -2619292332901405838, -9168930696167144000, 7189565679023701112, -3784348811875506273, 6969186336342002761, 190115557740339469, -6670053063540178418, 3026363382133429817, 4688759527532605645, 1267203933280897563, -3822991418415986836, -4803348540518755652, -6519898664521272452, -6744280789565605978, 4171749401711160583, -330317115202654258, -7149180429060725303, 5865018623458514818, 1863945475898542341, 1562192641701346018, -8024756284299807543]
+INFO  [main] 2021-02-19 10:11:21,155 StorageService.java:1536 - JOINING: sleeping 30000 ms for pending range setup
+INFO  [main] 2021-02-19 10:11:51,166 StorageService.java:1536 - JOINING: Starting to bootstrap...
+INFO  [main] 2021-02-19 10:11:52,079 StreamResultFuture.java:90 - [Stream #e2528140-729a-11eb-9419-f1e5bdb2049d] Executing streaming plan for Bootstrap
+INFO  [StreamConnectionEstablisher:1] 2021-02-19 10:11:52,082 StreamSession.java:282 - [Stream #e2528140-729a-11eb-9419-f1e5bdb2049d] Starting streaming to /172.22.0.2
+INFO  [StreamConnectionEstablisher:1] 2021-02-19 10:11:52,088 StreamCoordinator.java:270 - [Stream #e2528140-729a-11eb-9419-f1e5bdb2049d, ID#0] Beginning stream session with /172.22.0.2
+INFO  [STREAM-IN-/172.22.0.2:7000] 2021-02-19 10:11:53,181 StreamResultFuture.java:187 - [Stream #e2528140-729a-11eb-9419-f1e5bdb2049d] Session with /172.22.0.2 is complete
+INFO  [StreamConnectionEstablisher:2] 2021-02-19 10:11:53,209 StreamSession.java:282 - [Stream #e2528140-729a-11eb-9419-f1e5bdb2049d] Starting streaming to /172.22.0.3
+INFO  [StreamConnectionEstablisher:2] 2021-02-19 10:11:53,215 StreamCoordinator.java:270 - [Stream #e2528140-729a-11eb-9419-f1e5bdb2049d, ID#0] Beginning stream session with /172.22.0.3
+INFO  [STREAM-IN-/172.22.0.3:7000] 2021-02-19 10:11:53,781 StreamResultFuture.java:187 - [Stream #e2528140-729a-11eb-9419-f1e5bdb2049d] Session with /172.22.0.3 is complete
+INFO  [STREAM-IN-/172.22.0.3:7000] 2021-02-19 10:11:53,789 StreamResultFuture.java:219 - [Stream #e2528140-729a-11eb-9419-f1e5bdb2049d] All sessions completed
+INFO  [main] 2021-02-19 10:11:53,790 StorageService.java:1593 - Bootstrap completed for tokens [-1735436367716918322, -2627788262026802420, -8200710408428056928, -6303632439283879706, -6607237659777760699, -5107453214733490259, 6074395237809683699, 2807702731294656397, -5720579114336198290, 8608220413560805174, -4894744284153640275, -2492833824394058930, -1368365663286170806, -6614256820934020260, 8229269065125549406, 8304195814444599416, 2024079544554902013, -3042919702679150459, -5457033690981760750, 4469719336178757257, -6088081262322087316, 7593152370642061076, -7711148092768613013, -5951314323013058955, -2530880018396532590, 8601639333716587040, -6037175724138348884, -2426648861681679092, -123894435838830349, 4676639567332103014, -1990394149190439622, 9000202287381080727, 4254789861177334923, 2895125481778663111, -1122187083112174837, 7650757585270599617, -2961932969072190820, -295191536911227699, -7009816371018041572, 6438715956694073712, -6921694415703652349, -316472061021828880, 8000336577206095643, 2367507243164584997, -8299757017276932279, 7803139212399192639, -6610697061248218473, -8541935421543354545, -8228495434876333273, -7786565017641791743, -1513622271704829219, 9106331198948196250, -9156868035383117721, -5238055290729281184, -6263510574135498525, -4417103614803425033, -5649479739167289142, 8808935907620376117, 3427805709046524434, 800877761656018789, -3595527108430796060, -2416881671196064058, -5746816248479111509, -1868684957917752643, -6171807070591817951, -5036821804877164943, 4468933977315540257, 2997227483533551206, -3981566310460713187, -2285366668708720329, 6833604579692714902, 852827638712029569, -1410365545340478315, 5546949072567932374, 7551994329973716291, 722691921018526885, -4338411705216820764, 2435630148687074119, 4791615731815758568, 4254835656784340414, -4379874531060838985, -6868084589795649865, 5988866667951013236, -5933961188479862469, -1018184418108875990, 4892243446244425248, -4978501019059295032, -9053344587143620620, 8749098190080366459, -3430890525029507671, 9134285043105109698, -3847369735449424033, -1354593380282502963, -7504963320241742262, 2314740868821903624, -4620749998641813448, 6731958642130651066, 833142592430697711, -4994436551160316749, -571357823180030454, -875099733125794319, 7634203883311977735, 256148891939654295, 8796263243254838532, 5462116161399348377, 5880423327172043654, 6291538473973681305, -1324641486521966128, 4938778711051009316, -1894832301884796852, -5923081914169290492, 8069711577113001837, 7936088178446505644, -1602712159855404473, 5125065788126182946, 7347047081108898520, -340272434309150275, 8498295976014222966, 3089651685021726852, 6904707655970370566, 641079742270900830, 189864025263788884, 5100949120555310126, -7408761592737180623, 352355742567433183, -9013401691227037598, -4223285323153529459, -1666804556360507893, -173623414643316127, -1204978809420731631, 2386855461520011143, -1927524809922349807, -4126353603986531922, -8142467021580420651, -6418211998406043159, 4462517947658043012, 5175734724406456201, -8676789732105428020, 6502178850815561496, 4355142805692271779, 3937263437557550752, 6602505274264119575, -6718753004957819496, 26481164055371234, -4623239688962222908, 8812585447761522713, -7456943046014538819, 5706883897963411478, 5424792776766720344, -1609227043495080006, -5901800888391363573, 7106898549615620027, -1176064242039240885, -2505877583055211803, -4124491133097004979, -5993035585577063050, 8652006763427748630, -187855279783565952, 6672958437517178052, 1091278204678934185, -1917923837348608856, -3495850988575807874, -7547472607324240992, -2605961278739943773, -4214706851571046019, 7584113391776962004, -2557574891241088015, 4053147008323708767, -4767520331628777777, 8278353097323369171, 6594615906187606658, 5793329501590998613, 3522316943584798622, 4178353918727738317, 5615334751380927868, 68958741485387348, 8719348424332953170, 7238853491046242593, -32507009329295379, -5704532325651494826, 4102057149728670561, 2619881062803494628, -386495703731598806, 2931540956203324985, 7158521435985614235, -7873169967046853220, 3683051524345350576, 903492237569447215, -4298650744180720784, -2510607226493911030, -8083163049605870564, 6892589840804029614, -7861291650209023770, -395124675185767352, -7856757335319529851, -1797375265342231056, 3563743165465422786, -919097509877068744, -6607727430453866773, 5587298035792431704, 5421090672483290371, -1804044570548416251, 6181188998029024764, 5971332350411364450, -6928870091424153394, -3605237083181650821, -9180568251221118106, 3973681216886966149, -1737472415864294621, -880108464821186859, 352907596089970088, -2436762760479719151, -1209326538278450431, -6450876081490467066, 7489643202697875382, 4895398751621225, -6323937097054192363, -3084138527222583792, 6118361349234853108, 3071133036483239314, 7314936243462327243, 1352608837839350426, 4512105990193590591, -1134544837478568745, 7335894322867578149, -5606267901006126503, 7251247966774306080, 5302224643160677252, -3320943503928590745, 1568770259256957701, -3215068101977167652, 5433277172665190026, -8774614882021378582, 6174446079343571337, 175428532193533493, -2619292332901405838, -9168930696167144000, 7189565679023701112, -3784348811875506273, 6969186336342002761, 190115557740339469, -6670053063540178418, 3026363382133429817, 4688759527532605645, 1267203933280897563, -3822991418415986836, -4803348540518755652, -6519898664521272452, -6744280789565605978, 4171749401711160583, -330317115202654258, -7149180429060725303, 5865018623458514818, 1863945475898542341, 1562192641701346018, -8024756284299807543]
+INFO  [main] 2021-02-19 10:11:53,805 StorageService.java:1536 - JOINING: Finish joining ring
+INFO  [main] 2021-02-19 10:11:54,028 Gossiper.java:1796 - Waiting for gossip to settle...
+INFO  [main] 2021-02-19 10:12:02,029 Gossiper.java:1827 - No gossip backlog; proceeding
+INFO  [main] 2021-02-19 10:12:02,308 NativeTransportService.java:68 - Netty using native Epoll event loop
+INFO  [main] 2021-02-19 10:12:02,375 Server.java:158 - Using Netty Version: [netty-buffer=netty-buffer-4.0.44.Final.452812a, netty-codec=netty-codec-4.0.44.Final.452812a, netty-codec-haproxy=netty-codec-haproxy-4.0.44.Final.452812a, netty-codec-http=netty-codec-http-4.0.44.Final.452812a, netty-codec-socks=netty-codec-socks-4.0.44.Final.452812a, netty-common=netty-common-4.0.44.Final.452812a, netty-handler=netty-handler-4.0.44.Final.452812a, netty-tcnative=netty-tcnative-1.1.33.Fork26.142ecbb, netty-transport=netty-transport-4.0.44.Final.452812a, netty-transport-native-epoll=netty-transport-native-epoll-4.0.44.Final.452812a, netty-transport-rxtx=netty-transport-rxtx-4.0.44.Final.452812a, netty-transport-sctp=netty-transport-sctp-4.0.44.Final.452812a, netty-transport-udt=netty-transport-udt-4.0.44.Final.452812a]
+INFO  [main] 2021-02-19 10:12:02,376 Server.java:159 - Starting listening for CQL clients on /0.0.0.0:9042 (unencrypted)...
+INFO  [main] 2021-02-19 10:12:02,421 CassandraDaemon.java:564 - Not starting RPC server as requested. Use JMX (StorageService->startRPCServer()) or nodetool (enablethrift) to start it
+INFO  [main] 2021-02-19 10:12:02,421 CassandraDaemon.java:650 - Startup complete
+INFO  [Service Thread] 2021-02-19 10:12:11,951 GCInspector.java:285 - ConcurrentMarkSweep GC in 310ms.  CMS Old Gen: 7030480 -> 6988704; Code Cache: 15129728 -> 15167168; Metaspace: 41234648 -> 41238336; Par Eden Space: 243527680 -> 244087016; 
+INFO  [MigrationStage:1] 2021-02-19 10:22:14,316 ColumnFamilyStore.java:421 - Initializing coredms.metrics

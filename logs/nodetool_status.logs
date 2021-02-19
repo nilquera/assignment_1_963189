@@ -1,0 +1,14 @@
+Datacenter: europe-north1
+=========================
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address     Load       Tokens       Owns (effective)  Host ID                               Rack
+UN  172.22.0.4  70.7 KiB   256          70.2%             9802ac51-e512-47f1-bcda-d9690c17d16a  2
+UN  172.22.0.2  95 KiB     256          64.3%             9990cae3-f3fc-4e81-8e6a-5ad05161b3aa  1
+Datacenter: europe-west1
+========================
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address     Load       Tokens       Owns (effective)  Host ID                               Rack
+UN  172.22.0.3  89.99 KiB  256          65.5%             593c8348-6098-4aa7-802f-98c7066e06c3  1
+
