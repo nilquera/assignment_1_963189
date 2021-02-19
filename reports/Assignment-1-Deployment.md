@@ -14,7 +14,7 @@ Also, this project was developed in an Ubuntu 18.04.4 LTS machine. However, it c
 
 ## mysimbdp-dataingest
 
-To install and run mysimbdp-dataingest, go to [code/dataingest](./code/dataingest). Follow the next instructions in order to install and run the program.
+To install and run mysimbdp-dataingest, go to [code/dataingest](../code/dataingest). Follow the next instructions in order to install and run the program.
 
 1) First, install the dependencies by running `npm install`.
 2) Copy the file .env.template to .env and fill the values. See [Configuration options](#configuration)
